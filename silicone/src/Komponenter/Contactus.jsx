@@ -9,6 +9,7 @@ function Contactus() {
     });
 
     const [errors, setErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -16,14 +17,17 @@ function Contactus() {
             ...formValues,
             [name]: value,
         });
+        
     };
 
     const validateForm = () => {
         const newErrors = {};
 
-        // Kontrollera att fälten inte är tomma
+        
         if (!formValues.fullname.trim()) {
             newErrors.fullname = 'Full name is required';
+        } else if (!/^[A-Za-zÅÄÖåäö\s-]+$/.test(formValues.fullname)) {
+            newErrors.fullname = 'Full name can only contain letters';
         }
         if (!formValues.email.trim()) {
             newErrors.email = 'Email address is required';
@@ -40,35 +44,39 @@ function Contactus() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        
+    
         if (validateForm()) {
-            // Om inga fel finns, kan vi skicka formuläret
-            console.log('Form submitted:', formValues);
-            // Här kan du skicka data till servern
-        }
-    };
+         
+                
+                setSuccessMessage("Request sent!");
 
-
-
-
-
-
-
+                setFormValues({
+                    fullname: '',
+                    email: '',
+                    specialist: '',
+                });
+    
+                setTimeout(() => {
+                    setSuccessMessage('');  
+                }, 5000);
+            }
+        };
 
 
 
 
 
   return (
-    <section className="contact-us">
+    <section  id="consultation" className="contact-us">
     <div className="contact-container">
   
-        <div className="contact-menu">
+       {/* <div className="contact-menu">
             <i className="house fa-solid fa-house fa-xs"></i>
             <p>Homepage</p>
             <i className="arrow fa-solid fa-angles-right fa-xs"></i>
             <p className="contact">Contact</p>
-        </div>
+        </div> */}
 
     <div className="contact-headline">
         <h1>Contact us</h1>
@@ -149,9 +157,14 @@ function Contactus() {
                 <button className="form-button" type="submit">
                     Make an appointment
                 </button>
+              
+                {successMessage && <p id="FormSubmitted">{successMessage}</p>}
+              
             </form>
-        </div>
+           
 
+        </div>
+                                   
 </section>
   )
 }

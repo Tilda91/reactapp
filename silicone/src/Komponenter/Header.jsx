@@ -8,7 +8,6 @@ import Link from'../assets/images/logo-icon.png'
 const Header = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
-    // Check localStorage for dark mode preference on component mount
     useEffect(() => {
       const darkModePreference = localStorage.getItem('darkmode');
       if (darkModePreference === 'on' || (!darkModePreference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -18,21 +17,21 @@ const Header = () => {
       }
     }, []);
   
-    // Enable dark mode function
+   
     const enableDarkMode = () => {
       document.documentElement.classList.add('dark');
       setIsDarkMode(true);
       localStorage.setItem('darkmode', 'on');
     };
   
-    // Disable dark mode function
+    
     const disableDarkMode = () => {
       document.documentElement.classList.remove('dark');
       setIsDarkMode(false);
       localStorage.setItem('darkmode', 'off');
     };
   
-    // Toggle dark mode function
+    
     const handleToggleDarkMode = () => {
       if (isDarkMode) {
         disableDarkMode();
@@ -53,7 +52,7 @@ const Header = () => {
 
         <nav id="main-menu" className="navbar">
             <a className="nav-link" href="#">Features</a>
-            <a className="nav-link" href="#">Contacts</a>
+            <a className="nav-link" href="#consultation">Contact</a>
         </nav>
 
         <div id="darkmode-toggle-switch" className="btn-toggle-switch">
@@ -63,7 +62,7 @@ const Header = () => {
               id="darkmode-switch"
               type="checkbox"
               checked={isDarkMode}
-              onChange={handleToggleDarkMode} // Toggle function
+              onChange={handleToggleDarkMode} 
             />
             <span className="slider round"></span>
           </label>

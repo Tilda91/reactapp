@@ -20,8 +20,36 @@
     --color-shadow: #e2e5f1;
     --color-faq: rgba(0, 0, 0, 0.1);
     --color-btn-swift: #ffff;
+    --color-gray-text:#9397AD;
+    --color-border-gray: #e2e5f1;
+    --color-consult-background: #FFF;
     
  }
+
+ .dark {
+
+  --color-dark: #fff;
+  --color-darkgrey: #fff;
+  --color-primary:#6366f1;
+  --color-mediumgray: #fff;
+  --color-gray:#33354D; 
+  --color-white:#ffff;
+  --color-lightgray: #e2e5f1;
+  --color-second-background: hsl(223, 39%, 10%);
+  --color-background: hsl(223, 39%, 7%) ;
+  --color-thr-background: hsl(235, 20%, 15%);
+  --color-faq-background:hsl(235, 20%, 10%);
+  --color-btn-background: hsl(235, 20%, 14%);
+  --color-gradient: linear-gradient(hsl(223, 39%, 7%),hsl(223, 39%, 10%) );
+  --color-shadow: none;
+  --color-faq: #33354D;
+  --color-btn-swift: #000000;
+  --color-gray-text:hsl(0, 0%, 50%);
+  --color-border-gray:hsl(0, 0%, 20%) ;
+  --color-consult-background:  hsl(223, 39%, 10%);
+
+ 
+}
 
  * {
     margin: 0;
@@ -52,27 +80,7 @@ html {
   color-scheme: light;
 }
 
-.dark {
 
-  --color-dark: #fff;
-  --color-darkgrey: #fff;
-  --color-primary:#6366f1;
-  --color-mediumgray: #fff;
-  --color-gray:#33354D; /*#9397AD;*/
-  --color-white:#ffff;
-  --color-lightgray: #e2e5f1;
-  --color-second-background: hsl(223, 39%, 10%);
-  --color-background: hsl(223, 39%, 7%) ;
-  --color-thr-background: hsl(235, 20%, 15%);
-  --color-faq-background:hsl(235, 20%, 15%);
-  --color-btn-background: hsl(235, 20%, 14%);
-  --color-gradient: linear-gradient(hsl(223, 39%, 7%),hsl(223, 39%, 10%) );
-  --color-shadow: none;
-  --color-faq: #33354D;
-  --color-btn-swift: #000000;
-
- 
-}
 
 
   /* Mina knappar*/
@@ -178,7 +186,7 @@ html {
     font-weight: 600;
     text-decoration: none;
     align-items: center;
-    justify-content: space-between;
+   
 
   }
 
@@ -309,8 +317,6 @@ html {
 
     }
 
-
-
     .content {
       padding-left:7rem;
       padding-right: 0rem;
@@ -319,7 +325,7 @@ html {
 
          .presentation {
             text-align: left;
-            color: var(--color-mediumgray);
+            color: var(--color-gray-text);
             font-size: 18px;
             font-weight: 400;
             margin-top: 2rem;
@@ -433,7 +439,7 @@ html {
   }
   
   .logo-box {
-      border: 1px solid var(--color-lightgray);
+      border: 1px solid var(--color-border-gray);
       border-radius: 8px;
       height: 100px;
       width: 200px;
@@ -478,7 +484,7 @@ html {
   
       font-size: 16px;
       font-weight: 400;
-      color: var(--color-gray);
+      color: var(--color-gray-text);
     }
 
   }
@@ -547,7 +553,7 @@ html {
       grid-area: p;
       display: grid;
       width: 261px;
-      color: var(--color-mediumgray);
+      color: var(--color-gray-text);
       font-size: 16px;
       font-weight: 400;  
     }
@@ -623,7 +629,7 @@ html {
     text-align: center;
     font-size: 16px;
     font-weight: 400;
-    color: var(--color-mediumgray);
+    color: var(--color-gray-text);
   }
 
 }
@@ -681,7 +687,7 @@ ul li {
       padding-left: .5em;
       font-size: 16px;
       font-weight: 400;
-      color: var(--color-gray);
+      color: var(--color-gray-text);
     }
 
     .btn-primary {
@@ -792,7 +798,7 @@ ul li {
     width: 130%;
     grid-area: text;
     justify-content: left;
-    color: var(--color-mediumgray);
+    color: var(--color-gray-text);
     font-size: 16px;
     font-weight: 400;
   }
@@ -832,7 +838,7 @@ ul li {
 
   .headline { 
     position: relative;
-    text-shadow: 2px 1px 5px var( --color-mediumgray);
+    text-shadow: 1px 1px 1px var( --color-mediumgray);
     font-weight: 800;
     font-size: 40px;
     color: var(--color-dark);
@@ -843,6 +849,7 @@ ul li {
 
 
 .testimonial-card {
+
   background-color: var(--color-thr-background);
   border-radius: 12px;
   padding: 20px;
@@ -866,14 +873,18 @@ ul li {
   height: 20px;
 }
 
-.stars {
+.starRating {
   margin-top: 20px;
   color: #f9c22e; 
   font-size: 20px;
 }
 
+.testimonials {
+  display: flex;
+}
+
 .testimonial-text {
-  color: var(--color-mediumgray);
+  color: var(--color-gray-text);
   font-size: 18px;
   line-height: 1.6;
   margin: 15px 0;
@@ -895,15 +906,18 @@ ul li {
 .author-info h5 {
   margin: 0;
   font-size: 16px;
-  color: var var(--color-dark);
+  color: var(--color-dark);
   font-weight: bold;
 }
 
 .author-info p {
   margin: 0;
   font-size: 14px;
-  color: var(--color-gray);
+  color: var(--color-gray-text);
 }
+
+
+
 
 /*FAQ card section*/
 
@@ -937,7 +951,7 @@ ul li {
   p {
     font-weight: 400;
     font-size: 20px;
-    color: var(--color-mediumgray);
+    color: var(--color-gray-text);
     padding-bottom: 1rem;
   }
 }
@@ -957,7 +971,7 @@ ul li {
 .contact-card {
   
   background-color: var(--color-background);
-  border: 1px solid var(--color-lightgray); 
+  border: 1px solid var(--color-border-gray); 
   border-radius: 10px;
   padding: 15px;
   margin-right: 2rem;
@@ -994,7 +1008,7 @@ ul li {
 
 .contact-card-two {
   background-color: var(--color-background);
-  border: 1px solid var(--color-lightgray); 
+  border: 1px solid var(--color-border-gray); 
   border-radius: 10px;
   padding: 15px;
   width: 200px;
@@ -1107,7 +1121,9 @@ ul li {
   position: relative;
 
   .form-input{
-    border: 1px solid var(--color-lightgray);
+    background-color: var(--color-faq-background);
+    color: var(--color-dark);
+    border: 1px solid var(--color-border-gray);
     padding: .3em;
     font-size: 1rem;
     border-radius: .5em 0 0 .5em;
@@ -1115,6 +1131,7 @@ ul li {
   
   }
   
+
   .btn-primary {
     border: 0;
     padding: .5em 2em;
@@ -1131,6 +1148,25 @@ ul li {
   
 }
 
+input[type="email"]:focus {
+  border: 2px solid;
+  transition: border-color 0.5s ease;
+  border-color: var(--color-primary); 
+    outline: none; 
+}
+
+
+
+.error-message {
+  color: red;
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  margin-top: 10px; 
+  white-space: nowrap;
+  font-weight: 600;
+}
+
 
 /* footer */
 
@@ -1138,7 +1174,7 @@ ul li {
   display: flex;
   text-align: center;
   justify-content: center;
-  color: var(--color-gray);
+  color: var(--color-gray-text);
   font-size: 14px;
   font-weight: 400;
   padding-bottom: 2rem;
@@ -1282,7 +1318,7 @@ font-size: 12px;
 /* FORM */
 
 .consultation-form {
-  background-color: var(--color-faq-background);
+  background-color: var(--color-thr-background);
   padding: 70px;
   border-radius: 10px;
   height: 690px;
@@ -1294,6 +1330,23 @@ font-size: 12px;
   
 }
 
+#email {
+  background-color: var(--color-consult-background);
+}
+
+#fullname {
+  background-color: var(--color-consult-background);
+  color: var(--color-dark);
+}
+
+#specialist {
+  background-color: var(--color-consult-background);
+  color: var(--color-dark);
+  
+}
+
+
+
 .consultation-form h2 {
   font-size: 24px;
   font-weight: 800;
@@ -1303,6 +1356,7 @@ font-size: 12px;
 
 .form-group {
   margin-bottom: 2rem;
+  
 }
 
 .form-group label {
@@ -1315,13 +1369,14 @@ font-size: 12px;
 
 .form-group input,
 .form-group select {
+  color: var(--color-dark);
   width: 100%;
   padding: 12px 15px;
   font-size: 16px;
-  border: 1px solid var(--color-shadow);
+  border: 2px solid var(--color-shadow);
   border-radius: 5px;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.5s ease;
 }
 
 .form-group input:focus,
@@ -1332,7 +1387,7 @@ font-size: 12px;
 
 .form-button {
   width: 100%;
-  margin-top: 7rem;
+  margin-top: 4rem;
   padding: 12px;
   background-color: var(--color-primary);
   border: none;
@@ -1345,6 +1400,20 @@ font-size: 12px;
 
 .form-button:hover {
   background-color: #9e9fee;
+}
+
+.error {
+  font-weight: 600;
+  color: red;
+}
+
+#FormSubmitted {
+  color: green;
+  font-weight: 800;
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 
@@ -1379,13 +1448,13 @@ font-size: 12px;
   }
 
   p {
-    color: var(--color-mediumgray);
+    color: var(--color-gray-text);
     font-size: 16px;
     font-weight: 400;
   }
 
   span {
-    color: var(--color-dark);
+    color: var(--color-gray-text);
     font-weight: 800;
   }
 }
@@ -1420,6 +1489,7 @@ font-size: 12px;
 
 
 .social-icons {
+  
   display: flex;
   align-items: center;
   
